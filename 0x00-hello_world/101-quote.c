@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/*
+/**
  *main - Entry 
- *Return: 1
+ *Return:always 1
+ *
  */
 
 int main(void)
