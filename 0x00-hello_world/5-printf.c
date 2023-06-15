@@ -1,6 +1,7 @@
 #include <stdio.h>
-/*
- * this is a sample printf statement.
+/**
+ *main - Entry point
+ *Return: Always 0 (Success)
  */
 int main(void)
 {
