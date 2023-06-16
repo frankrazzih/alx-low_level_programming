@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 /*
- * entry - main
+ * function main - start of the program
  * description - the program generates a random no. each time it is executed
  * return - 0(indicating success)
 */
