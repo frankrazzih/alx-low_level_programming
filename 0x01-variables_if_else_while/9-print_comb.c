@@ -8,7 +8,7 @@ int main(void)
 {
 	/*initialize the var int*/
 	int num1 =0;
-	int num2 =0;
+/*	int num2 =0;*/
 	/*set the range of the first no I want to combine*/
 	for (num1 =0; num1 <= 9; num1++){
 		/*set the range of the second no.*/
