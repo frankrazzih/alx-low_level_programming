@@ -1,9 +1,10 @@
+#!/bin/bash
 #include <stdio.h>
 #include <time.h>
-/* more headers goes there */
 #include <stdlib.h>
 /*entry - main
- * return - 0 (indicating success)
+ * description - the program generates a random no. each time it is executed
+ * return - 0 (indicating success) 
  */
 
 /* betty style doc for function main goes there */
