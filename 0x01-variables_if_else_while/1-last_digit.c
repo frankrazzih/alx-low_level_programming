@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* 
- * Entry - main
+/** 
+ * Main - entry
  * Description - generates a random no when executed
- * Return - 0 (indicates success)
+ * Return: always 0 (success)
  * function main goes there 
  */
 int main(void)
@@ -14,7 +14,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	n1 = n % 10;
+	n1 = abs(n % 10);
 	if (n > 5)
                 printf("Last digit of %d is %d and is greater than 5\n", n,n1);
 	else if ( n ==0)
