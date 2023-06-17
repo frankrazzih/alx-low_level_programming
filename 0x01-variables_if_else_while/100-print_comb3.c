@@ -34,6 +34,7 @@ int main(void)
 			}
 		}
 	}
+	putchar('\n');
 	/*program ends*/
 	return (0);
 }
