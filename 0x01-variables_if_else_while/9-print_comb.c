@@ -11,6 +11,8 @@ int main(void)
 /*	int num2 =0;*/
 	/*set the range of the first no I want to combine*/
 	for (num1 =0; num1 <= 9; num1++){
+		if (num1 == 9){
+                break;}
 		/*set the range of the second no.*/
 /*	for (num2 =0; num2 <= 9; num2++){*/
 		/*print the combination*/

@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-/*
- * function main - start of the program
+/**
+ * main - entry point
  * description - the program generates a random no. each time it is executed
- * return - 0(indicating success)
+ * Return: Always 0 (Success)
 */
 int main(void)
 {
