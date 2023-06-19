@@ -36,7 +36,7 @@ int main(void)
 			/* Print the combination */
 			putchar(num11 + '0');
 			putchar(num12 + '0');
-			putchar('	');
+			putchar(' ');
 			putchar(num21 + '0');
 			putchar(num22 + '0');
 
