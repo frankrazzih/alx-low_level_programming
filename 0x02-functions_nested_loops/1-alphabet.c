@@ -1,28 +1,14 @@
 #include <stdio.h>
 #include "main.h"
-void print_alphabet(void);
 
 /**
- * main - Entry point of the program
+ * main - check the code for Holberton School students.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 int main(void)
 {
-    print_alphabet();
-    putchar('\n');
-    return 0;
-}
-
-/**
- * print_alphabet - Prints the lowercase alphabet followed by a new line.
- */
-void print_alphabet(void)
-{
-    char alpha;
-
-    for (alpha = 'a'; alpha <= 'z'; alpha++)
-    {
-        putchar(alpha);
-    }
+	print_alphabet();
+	putchar('\n');
+	return (0);
 }
