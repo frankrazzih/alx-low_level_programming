@@ -1,5 +1,4 @@
-#include <stdio.h>
-void print_alphabet_x10(void);
+#include "main.h"
 void print_alphabet_x10(void)
 {
         int times=0;
@@ -8,14 +7,9 @@ void print_alphabet_x10(void)
         char a='a';
         for (a='a'; a <='z'; a++)
         {
-                putchar(a);
+               _putchar(a);
         }
-                        putchar('\n');
+                        _putchar('\n');
                         times++;
         }
-}
-int main(void)
-{
-	print_alphabet_x10();
-	return 0;
 }
