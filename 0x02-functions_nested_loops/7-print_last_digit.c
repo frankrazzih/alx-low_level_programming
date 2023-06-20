@@ -9,8 +9,21 @@
 int print_last_digit(int x)
 {
         int y;
-
+	if (x > 0)
+	{
         y = x % 10;
         return (y);
+	}
+	else if (x == 0)
+	{
+		return (0);
+	}
+	else 
+	{
+		x*=-1;
+		y = x % 10;
+		return (y);
+
+	}
 }
 
