@@ -8,18 +8,17 @@
  */
 int _islower(int c)
 {
-    int result;
+	int result;
 
-    if (c >=97 && c <=122)
-    {
-        result = 1;
-        _putchar(result + '0');
-    }
-    else
-    {
-        result = 0;
-        _putchar(result + '0');
-    }
+	if (c >= 'a' && c <= 'z')
+	{
+		result = 1;
+	}
+	else
+	{
+		result = 0;
+	}
 
-    return result;
+	return result;
 }
+
