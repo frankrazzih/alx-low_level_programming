@@ -3,8 +3,9 @@
 /**
  * jack_bauer - Prints every minute of a 24-hour day.
  *
- * Description: This function prints every minute of a 24-hour day in the format HH:MM.
- *              The range of hours is from 00 to 23, and the range of minutes is from 00 to 59.
+ * Description: This function prints every minute of a 24-hour day in the
+ * format HH:MM. The range of hours is from 00 to 23, and the range of
+ * minutes is from 00 to 59.
  */
 void jack_bauer(void)
 {
