@@ -10,7 +10,7 @@ int _islower(int c)
 {
     int result;
 
-    if (c >= 'a' && c <= 'z')
+    if (c >=97 && c <=122)
     {
         result = 1;
         _putchar(result + '0');
