@@ -1,5 +1,14 @@
 #include <stdio.h>
-#include "main.h"
+void print_alphabet(void);
+void print_alphabet(void)
+{
+    char alpha;
+
+    for (alpha = 'a'; alpha <= 'z'; alpha++)
+    {
+        putchar(alpha);
+    }
+}
 
 /**
  * main - check the code for Holberton School students.
