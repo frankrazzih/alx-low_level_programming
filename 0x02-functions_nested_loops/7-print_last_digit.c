@@ -8,22 +8,25 @@
  */
 int print_last_digit(int x)
 {
-        int y;
+	int y;
+
 	if (x > 0)
 	{
-        y = x % 10;
-        return (y);
+		y = x % 10;
+		_putchar(y + '0');
+		return y;
 	}
 	else if (x == 0)
 	{
-		return (0);
+		_putchar('0');
+		return 0;
 	}
-	else 
+	else
 	{
-		x*=-1;
+		x *= -1;
 		y = x % 10;
-		return (y);
-
+		_putchar(y + '0');
+		return y;
 	}
 }
 
