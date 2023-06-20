@@ -3,30 +3,25 @@
 /**
  * print_alphabet - Prints the lowercase alphabet followed by a new line.
  */
-void print_alphabet(void);
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0 (indicating success)
- */
-int main(void)
+void print_alphabet(void)
 {
-    print_alphabet();
-    putchar('\n');
-    return 0;
+	char alpha;
+
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+	{
+		putchar(alpha);
+	}
 }
 
 /**
- * print_alphabet - Prints the lowercase alphabet followed by a new line.
+ * main - Entry point of the program
+ *
+ * Return: Always 0 (Success)
  */
-void print_alphabet(void)
+int main(void)
 {
-    char alpha;
-
-    for (alpha = 'a'; alpha <= 'z'; alpha++)
-    {
-        putchar(alpha);
-    }
+	print_alphabet();
+	putchar('\n');
+	return 0;
 }
 
