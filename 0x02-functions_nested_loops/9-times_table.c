@@ -1,160 +1,39 @@
 #include "main.h"
+
 void times_table(void)
 {
-	int x;
-	for (x = 0; x <= 9;x++)
-	{
-		_putchar('0');
-		_putchar(',');
-		_putchar(' ');
-	}
-	_putchar('\n');
-	for (x=0;x<=9;x++)
-	{
+    int x, y;
 
-		_putchar(x+ '0');
-		if (x<9)
-		{
-                _putchar(',');
-                _putchar(' ');
-		}
-	}
-	_putchar('\n');
-	for (x=0;x<=18;x+=2)
+    for (x = 0; x <= 9; x++)
+    {
+        for (y = 0; y <= 9; y++)
         {
-		int x1=x/10;
-                int x2=x%10;
-		if (x>9)
-		{
-			_putchar(x1+ '0');
-			_putchar(x2+ '0');
-		}
-		else
-		{
-			_putchar(x+ '0');
-		}
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=27;x+=3)
-        {
-		int x1=x/10;
-                int x2=x%10;
+            int product = x * y;
 
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
+            if (product < 10)
+            {
+                _putchar(' ');
+                _putchar(product + '0');
+            }
+            else
+            {
+                int tens = product / 10;
+                int ones = product % 10;
+
+                _putchar(tens + '0');
+                _putchar(ones + '0');
+            }
+
+            if (y != 9)  // Check if it's not the last number in the row
+            {
                 _putchar(',');
                 _putchar(' ');
+            }
         }
+        
+        // After each row, we print a new line
         _putchar('\n');
-	 for (x=0;x<=36;x+=4)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=45;x+=5)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=54;x+=6)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=63;x+=7)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=72;x+=8)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
-	 for (x=0;x<=81;x+=9)
-        {
-		int x1=x/10;
-                int x2=x%10;
-                if (x>9)
-                {
-                        _putchar(x1+ '0');
-                        _putchar(x2+ '0');
-                }
-                else
-                {
-                        _putchar(x+ '0');
-                }
-                _putchar(',');
-                _putchar(' ');
-        }
-        _putchar('\n');
+    }
 }
+
+
