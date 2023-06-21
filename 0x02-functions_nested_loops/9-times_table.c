@@ -1,5 +1,8 @@
 #include "main.h"
 
+/**
+ * times_table - Prints the multiplication table of numbers 0 to 9.
+ */
 void times_table(void)
 {
     int x, y;
@@ -24,16 +27,15 @@ void times_table(void)
                 _putchar(ones + '0');
             }
 
-            if (y != 9)  // Check if it's not the last number in the row
+            if (y != 9)  /* Check if it's not the last number in the row */
             {
                 _putchar(',');
                 _putchar(' ');
             }
         }
         
-        // After each row, we print a new line
+        /* After each row, we print a new line */
         _putchar('\n');
     }
 }
-
 
