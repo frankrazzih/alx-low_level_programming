@@ -43,6 +43,21 @@ void print_times_table(int n)
 				_putchar(tens + '0');
 				_putchar(ones + '0');
 			}
+			
+                        else if (product >= 10000)
+                        {
+				int tenth = product / 10000;
+                                int th = product / 1000;
+                                int hund = (product / 100) % 10;
+                                int tens = (product / 10) % 10;
+                                int ones = product % 10;
+				_putchar(tenth + '0');
+
+                                _putchar(th + '0');
+                                _putchar(hund + '0');
+                                _putchar(tens + '0');
+                                _putchar(ones + '0');
+                        }
 			else
 			{
 				int hund = (product / 100) % 10;
