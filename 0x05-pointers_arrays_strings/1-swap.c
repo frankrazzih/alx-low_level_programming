@@ -9,8 +9,8 @@
  */
 void swap_int(int *a, int *b)
 {
-    const int c = *a;
-    *a = *b;
-    *b = c;
+	const int c = *a;
+	*a = *b;
+	*b = c;
 }
 
