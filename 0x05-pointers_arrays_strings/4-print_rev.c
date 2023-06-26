@@ -14,14 +14,13 @@ void print_rev(char *s)
     size_t x = strlen(s);
     char y;
 
-    putchar(s[x - 1]);
 
     for (x = strlen(s); x > 0; x--)
     {
         y = s[x - 1];
-        putchar(y);
+        _putchar(y);
     }
 
-    putchar('\n');
+    _putchar('\n');
 }
 
