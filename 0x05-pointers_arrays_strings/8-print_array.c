@@ -13,7 +13,9 @@
  */
 void print_array(int *a, int n)
 {
-    for (int m = 0; m < n; m++)
+    int m;
+    
+    for (m = 0; m < n; m++)
     {
         if (m == n - 1)
         {
