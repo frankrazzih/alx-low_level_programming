@@ -12,10 +12,10 @@
 void print_rev(char *s)
 {
     size_t x = strlen(s);
+    char y;
 
     putchar(s[x - 1]);
 
-    char y;
     for (x = strlen(s); x > 0; x--)
     {
         y = s[x - 1];
