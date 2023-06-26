@@ -1,13 +1,16 @@
 #include "main.h"
-/**
- * void swap_int - swpas the values of two int
- * @*a,@*b - the function parameters
- * return -void
- */
-void swap_int(int *a,int *b)
-{
-	const int c = *a;
-	*a = *b;
-	*b = c;
 
+/**
+ * swap_int - Swaps the values of two integers.
+ * @a: Pointer to the first integer.
+ * @b: Pointer to the second integer.
+ *
+ * Return: void
+ */
+void swap_int(int *a, int *b)
+{
+    const int c = *a;
+    *a = *b;
+    *b = c;
 }
+
