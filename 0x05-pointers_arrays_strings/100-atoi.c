@@ -11,6 +11,7 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int sign = 1;
+	int ret; // Declaration moved here
 
 	/* Skip any leading non-numeric characters */
 	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
@@ -22,8 +23,7 @@ int _atoi(char *s)
 		i++;
 	}
 
-	/* Convert the remaining string to an integer using atoi */
-	int ret = atoi(&s[i]);
+	ret = atoi(&s[i]); // Assignment here
 
 	return ret * sign;
 }
