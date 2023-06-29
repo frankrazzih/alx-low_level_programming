@@ -3,24 +3,24 @@
 
 /**
  * _strncat - Concatenates two strings, up to a maximum of n characters from src.
- * @dest: The string to which src will be appended.
- * @src: The string that will be appended to dest.
+ * @dest: The destination string to which src will be appended.
+ * @src: The source string that will be appended to dest.
  * @n: The maximum number of characters to be appended from src.
  *
- * Return: Pointer to the resulting concatenated string.
+ * Return: Pointer to the resulting concatenated string (dest).
  */
 char *_strncat(char *dest, char *src, int n)
 {
-    size_t destlen = strlen(src);
-    int x;
+	size_t dest_len = strlen(dest);
+	size_t i;
 
-    for (x = 0; x < n && src[x] != '\0'; x++)
-    {
-        dest[destlen + x] = src[x];
-    }
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
 
-    dest[destlen + x] = '\0';
+	dest[dest_len + i] = '\0';
 
-    return (dest);
+	return dest;
 }
 
