@@ -5,10 +5,10 @@
  * @dest: where n bytes are copied to
  * @src: where n bytes are copied from
  * @n: the number of bytes to be copied
- * return: dest which is a pointer to the copied bytes
+ * Return: dest which is a pointer to the copied bytes
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	dest = memcpy(dest,src,n);
-	return(dest);
+	dest = memcpy(dest, src, n);
+	return (dest);
 }
