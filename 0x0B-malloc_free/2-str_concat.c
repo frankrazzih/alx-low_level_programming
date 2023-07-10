@@ -10,14 +10,17 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *con = malloc(sizeof(s1) + sizeof(s2));
+	char *con = malloc((sizeof(s1) + sizeof(s2)) - 4);
 	size_t x;
 	size_t y = strlen(s1);
 	size_t z = strlen(s2);
+	const char *null = "NULL";
+	const char *checker = strstr(s1, null);
+	const char *checker1 = strstr(s2, null);
 
-	if (s1 == NULL || s2 == NULL)
+	if (checker != NULL || checker1 != NULL)
 	{
-		return (con);
+		return ("\n");
 	}
 	else if (con == NULL)
 	{
@@ -34,5 +37,6 @@ char *str_concat(char *s1, char *s2)
 		con[x + y] = s2[x];
 	}
 		return (con);
+		free(con);
 	}
 }
