@@ -16,6 +16,10 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+	else if (dup == NULL)
+	{
+		return (NULL);
+	}
 	else
 	{
 		for (x = 0; x < strlen(str); x++)
