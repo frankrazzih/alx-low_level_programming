@@ -9,7 +9,7 @@
  */
 char *_strdup(char *str)
 {
-	char *dup = malloc(sizeof(str));
+	char *dup = malloc(sizeof(str) + 5);
 	unsigned long int x = strlen(str);
 
 	if (str == NULL)
@@ -27,5 +27,6 @@ char *_strdup(char *str)
 			dup[x] = str[x];
 		}
 		return (dup);
+		free(dup);
 	}
 }
