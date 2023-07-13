@@ -13,12 +13,12 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int x, y, z;
+	unsigned int x, y, z;
+	char *str;
 
 	x = strlen(s1);
 	y = strlen(s2);
-	char *str = malloc(x + n + 1);	/* Allocate memory for concatenated string */
-
+	str = malloc(x + n + 1);  /* Allocate memory for concatenated string */
 	if (str != NULL)
 	{
 		for (z = 0; z < x; z++)
