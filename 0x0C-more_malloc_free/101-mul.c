@@ -11,13 +11,13 @@
 
 int main(int argc, char *argv[])
 {
+	/*var declaration*/
+	int x, x1, x2, y, y1, y2, prod;
 	if (argc < 3)
 	{
 		printf("Error\n");
 		return (98);
 	}
-	int x, x1, x2, y, y1, y2, prod;
-
 	/*find strlen*/
 	x = strlen(argv[1]);
 	y = strlen(argv[2]);
