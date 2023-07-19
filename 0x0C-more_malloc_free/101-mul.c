@@ -12,7 +12,9 @@
 int main(int argc, char *argv[])
 {
 	/*var declaration*/
-	int x, x1, x2, y, y1, y2, prod;
+	int x, x1, x2, y, y1, y2;
+	long prod;
+
 	if (argc < 3)
 	{
 		printf("Error\n");
@@ -50,6 +52,6 @@ int main(int argc, char *argv[])
 	}
 	/*multiply the args*/
 	prod = x2 * y2;
-	printf("%d\n", prod);
+	printf("%ld\n", prod);
 	return (0);
 }
