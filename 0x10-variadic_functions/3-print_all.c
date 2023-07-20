@@ -1,49 +1,51 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <string.h>
+#include "variadic_functions.h"
 
 /**
- * print_all - Prints values based on the provided format string.
- * @format: A string containing format specifiers.
- * @...: Variadic arguments to be printed based on the format specifiers.
+ * print_all - prints anything.
+ * @format: a list of types of arguments passed to the function.
  *
- * Return: void
+ * Return: no return.
  */
-void print_all(const char *const format, ...)
+void print_all(const char * const format, ...)
 {
-    va_list args;
-    unsigned long int format_length = strlen(format);
-    unsigned long int ii = 0;
+	va_list arg;
+	int i = 0, j, c = 0;
+	char *str;
+	const char *plh = "cifs";
 
-    va_start(args, format);
-    while (ii < format_length)
-    {
-        switch (format[ii])
-        {
-        case 'i':
-            printf("%s%d", (ii == 0 ? "" : ", "), va_arg(args, int));
-            break;
-        case 'f':
-            printf("%s%f", (ii == 0 ? "" : ", "), va_arg(args, double));
-            break;
-        case 'c':
-            printf("%s%c", (ii == 0 ? "" : ", "), va_arg(args, int));
-            break;
-        case 's':
-            {
-                char *s = va_arg(args, char *);
-                if (s == NULL)
-                    printf("%s(nil)", (ii == 0 ? "" : ", "));
-                else
-                    printf("%s%s", (ii == 0 ? "" : ", "), s);
-            }
-            break;
-        default:
-            break;
-        }
-        ii++;
-    }
-    va_end(args);
-    putchar('\n');
+	va_start(arg, format);
+	while (format && format[i])
+	{
+		j = 0;
+		while (plh[j])
+		{
+			if (format[i] == plh[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
+		}
+	switch (format[i])
+	{
+		case 'c':
+			printf("%c", va_arg(arg, int)), c = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(arg, int)), c = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(arg, double)), c = 1;
+			break;
+		case 's':
+			str = va_arg(arg, char *), c = 1;
+			if (str == NULL)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+	} i++;
+	}
+	va_end(arg), printf("\n");
 }
-
