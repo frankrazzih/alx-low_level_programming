@@ -19,7 +19,7 @@ int counter(char *c)
 /**
   * checker - check if string is empty
   * @c: string to check
-  * @st: which char in the string to check if it 
+  * @st: which char in the string to check if it
   * is palindrome
   * @sp: where to stop the check
   * Return: 0 if not a palindrome else return 1
