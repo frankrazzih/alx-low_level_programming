@@ -17,6 +17,6 @@ echo -e '#include "main.h"\nint _isalpha(int c)\n{}' > 4-isalpha.c
 echo -e '#include "main.h"\nchar *_strpbrk(char *s, char *accept)\n{}' > 4-strpbrk.c
 echo -e '#include "main.h"\nchar *_strstr(char *haystack, char *needle)\n{}' > 5-strstr.c
 echo -e '#include "main.h"\nint _abs(int n)\n{}' > 6-abs.c
-echo -e '#include "main.h"\nchar *_strcpy(char *dest, char *src)\n' > 9-strcpy.c
+echo -e '#include "main.h"\nchar *_strcpy(char *dest, char *src)\n{}' > 9-strcpy.c
 echo -e '#include "main.h"\nint _putchar(char c)\n{}' > _putchar.c
 
