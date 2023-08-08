@@ -23,12 +23,10 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (empty)
 	{
-		x1 = open(filename, O_RDWR | O_CREAT | O_APPEND, 0600);
+		x1 = open(filename, O_RDWR | O_CREAT | O_APPEND, 600);
 	}
 	else if (!empty)
-	{
 		x2 = open(filename, O_RDWR | O_TRUNC | O_APPEND);
-	}
 	if (text_content == NULL && empty)
 	{
 		close(x1);
@@ -40,17 +38,13 @@ int create_file(const char *filename, char *text_content)
 	if (empty)
 	{
 		if (write(x1, text_content, strlen(text_content)) == -1)
-		{
 			return (-1);
-		}
 		close(1);
 	}
 	else if (!empty)
 	{
 		if (write(x2, text_content, strlen(text_content)) == -1)
-		{
 			return (-1);
-		}
 		close(x2);
 	}
 	return (1);
