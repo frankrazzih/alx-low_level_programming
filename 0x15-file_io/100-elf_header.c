@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     ssize_t y;
 
     struct elf
-    {   unsigned char he_indent[EI_MAG0];
+    {   unsigned char he_indent[EI_MAG1];
         unsigned char ge_indent[EI_MAG1];
         unsigned char fe_indent[EI_MAG2];
         unsigned char ee_indent[EI_MAG3];
