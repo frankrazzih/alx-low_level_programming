@@ -1,77 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
 #include "main.h"
-#define buffsize 1024
-/**
- * transfer - Transfer content from one file to another
- * @file_from: Source file name
- * @file_to: Destination file name
- */
-void transfer(const char *file_from, const char *file_to)
-{
-	int x, tagf, srcf, x1, x2;
-	char *buffer = malloc(buffsize);
-	ssize_t byt_r, byt_wr;
-	mode_t permissions = umask(0);
 
-	x = access(file_to, F_OK);
-	if (x == -1)
-	{
-		tagf = open(file_to, O_WRONLY | O_CREAT, 0664);
-	}
-	else
-	{
-		tagf = open(file_to, O_WRONLY | O_TRUNC);
-	}
-	srcf = open(file_from, O_RDONLY);
-	if (srcf == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
-	while ((byt_r = read(srcf, buffer, buffsize)) != 0)
-	{
-		if (byt_r == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
-		if ((byt_wr = write(tagf, buffer, byt_r)) == 0)
-		{
-			x1 = close(srcf);
-			x2 = close(tagf);
-			if (x1 == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", srcf);
-				exit(100);
-			}
-			else if (x2 == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tagf);
-				exit(100);
-			}
-		}
-		if (byt_wr == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
-		}
-	}
-	umask(permissions);
-	free(buffer);
-}
+#define READF  "Error: Can't read from file %s\n"
 
 /**
- * main - Entry point
- * @argc: Argument count
- * @argv: Argument vector
- * Return: 0 on success, otherwise an exit code
- */
+  * main - entry point
+  * @argc: pointer to anode
+  * @argv: input to a node
+  * Return: null or address
+  */
+
 int main(int argc, char *argv[])
+
 {
+	char mem[1024];
+	int from, to, closef;
+	ssize_t readf, writef;
+
 	if (argc != 3)
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	from = open(argv[1], O_RDONLY);
+	if (from == -1)
+		dprintf(STDERR_FILENO, READF, argv[1]), exit(98);
+	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	if (to == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	while (1)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+		readf = read(from, mem, 1024);
+		if (readf == -1)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]), exit(98);
+		if (readf > 0)
+		{
+			writef = write(to, mem, readf);
+			if (writef == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		} else
+			break;
 	}
-	transfer(argv[1], argv[2]);
+	if (chmod(argv[2], 0664) == 1)
+		exit(101);
+	closef = close(from);
+	if (closef == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from), exit(100);
+	closef = close(to);
+	if (closef == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to), exit(100);
 	return (0);
 }
-

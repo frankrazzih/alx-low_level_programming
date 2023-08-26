@@ -1,52 +1,35 @@
 #include "main.h"
-#include <stdbool.h>
 
 /**
- * create_file - creates a file
- * @filename: name of the file being created
- * @text_content: text to be copied to the file
- * Return: 1 to indicate success else return -1
- */
-int create_file(const char *filename, char *text_content)
-{
-	int x1;
-	int x2;
-	bool empty;
+* create_file - entry point to a node
+* @filename: pointer to a node
+* @text_content: input to a node
+* Return: null or address
+*/
 
-	if (filename == NULL)
-	{
+int create_file(const char *filename, char *text_content)
+
+{
+	int length = 0, openf, writef = 0;
+
+	if (filename == 0)
 		return (-1);
-	}
-	if (access(filename, F_OK) == -1)
+
+	openf = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (openf == -1)
+		return (-1);
+
+	if (text_content != NULL)
 	{
-		empty = true;
-	}
-	if (empty)
-	{
-		x1 = open(filename, O_RDWR | O_CREAT | O_APPEND, 600);
-	}
-	else if (!empty)
-		x2 = open(filename, O_RDWR | O_TRUNC | O_APPEND);
-	if (text_content == NULL && empty)
-	{
-		close(x1);
-	}
-	else
-	{
-		close(x2);
-	}
-	if (empty)
-	{
-		if (write(x1, text_content, strlen(text_content)) == -1)
+		while (text_content[length])
+			length++;
+		writef = write(openf, text_content, length);
+		if (writef != length)
+		{
+			close(openf);
 			return (-1);
-		close(1);
+		}
 	}
-	else if (!empty)
-	{
-		if (write(x2, text_content, strlen(text_content)) == -1)
-			return (-1);
-		close(x2);
-	}
+	close(openf);
 	return (1);
 }
-
