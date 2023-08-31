@@ -14,9 +14,9 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		if (v & 1)
 		{
-			flip = flip+ 1;
+			flip = flip + 1;
 		}
 		v = v >> 1;
 	}
-	return (flip;
+	return (flip);
 }
