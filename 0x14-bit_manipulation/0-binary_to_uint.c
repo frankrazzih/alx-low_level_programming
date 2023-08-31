@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * int binary_to_uint - change binary to decimal
+ * @b: binary string
+ * Return: decimal number
+ */
 unsigned int binary_to_uint(const char *b)
 {
 	int len;
@@ -15,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		if (b[x] == '1')
 		{
-			sum += pow(2, (len - 1 - x));
+			sum += (b[x] - '0') << (len - 1 - x);
 		}
 	}
 	return (sum);
