@@ -4,6 +4,7 @@
  * @head: pointer to 1st node
  * @n: integer value
  * Return: newnode
+ */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *newnode = malloc(sizeof(dlistint_t));
